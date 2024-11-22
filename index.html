@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ran{
+
+            
+            /* margin: 40px; */
+            margin-left: 83px;
+            background-color:;
+            height: 40px;
+            width: 90px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 17px;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border: 3px solid;
+            box-shadow: 0px 5px 2px;
+
+        }   
+        #ip1{
+             
+          height: 60px;
+          width: 200px;
+          margin: 30px;
+          font-size: 30px;
+          border: 4px solid#fad3cf;
+          box-shadow: 1px 10px 10px ;
+
+        }
+        #back{
+          background-color:aliceblue;
+          width: 280px;
+         padding: 20px;
+          background: linear-gradient(109.6deg, rgb(0, 37, 84) 11.2%, rgba(0, 37, 84, 0.32) 100.2%);
+        }
+    </style>
+</head>
+<body>
+  <div id="back">
+     <form id="form1" onsubmit="evaluation(event)" >
+        <input type="text" id="ip1" ><br>
+        <input class="ran" type="button" value="click me" onclick="ran()">
+     </form>
+  </div>
+    <script>
+        let op = document.getElementById("op");
+      let form = document.getElementById("form1");
+      let display = document.getElementById("ip1");
+         const evaluation = (event) => {
+        event.preventDefault();
+        let res = eval(display.value);
+        display.value = res;
+        
+      };
+      let a;
+      function ran() {
+        a=(Math.trunc(Math.random()*999+1000));
+        display.value=a
+        let randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+        display.style.backgroundColor = randomColor;
+      }
+    </script>
+</body>
+</html>
